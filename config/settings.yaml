@@ -1,0 +1,31 @@
+# Multi-LLM Configuration
+# You can freely mix and match services (ollama/gemini) and models.
+
+agent:
+  service: "gemini"
+  model_id: "gemini-2.5-flash"
+  api_key_env: "GOOGLE_API_KEY"
+  # Optional: For using Ollama as agent instead
+  # service: "ollama"
+  # model_id: "llama3.1"
+  # endpoint: "http://localhost:11434/v1"
+
+tools:
+  service: "ollama"
+  model_id: "phi4"
+  endpoint: "http://localhost:11434/v1"
+  # Optional: For using Gemini as tools instead
+  # service: "gemini"
+  # model_id: "gemini-1.5-flash"
+  # api_key_env: "GOOGLE_API_KEY"
+
+chroma:
+  persist_path: "data/chroma_db"
+  collection_name: "production_knowledge"
+
+rag:
+  chunk_size: 500
+  chunk_overlap: 50
+  retrieve_top_k: 15     # Wide net
+  rerank_top_k: 5        # Strict filter
+  min_relevance: 0.1     # Re-ranker score (0-1)

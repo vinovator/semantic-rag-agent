@@ -1,0 +1,12 @@
+semantic-kernel>=1.18.0
+semantic-kernel[chroma]
+chromadb>=0.5.0
+pydantic>=2.0.0
+fastapi
+uvicorn
+python-dotenv
+langchain-text-splitters
+pymupdf
+sentence-transformers
+pyyaml
+pandas

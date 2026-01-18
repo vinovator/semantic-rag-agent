@@ -1,0 +1,31 @@
+/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/pydantic/plugin/_loader.py:50: UserWarning: ImportError while loading the `logfire-plugin` Pydantic plugin, this plugin will not be installed.
+
+ImportError("cannot import name 'ReadableLogRecord' from 'opentelemetry.sdk._logs' (/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/opentelemetry/sdk/_logs/__init__.py)")
+  warnings.warn(
+INFO:     Will watch for changes in these directories: ['/Users/vinothhaldorai/Documents/Vinoth/PROJECTS/semantic-rag-agent']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [30189] using WatchFiles
+/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/pydantic/plugin/_loader.py:50: UserWarning: ImportError while loading the `logfire-plugin` Pydantic plugin, this plugin will not be installed.
+
+ImportError("cannot import name 'ReadableLogRecord' from 'opentelemetry.sdk._logs' (/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/opentelemetry/sdk/_logs/__init__.py)")
+  warnings.warn(
+INFO:     Started server process [30198]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+--- Booting RAG Agent ---
+DataAnalyst: Loaded aei_raw_claude_ai_2025-11-13_to_2025-11-20.csv (458778 rows)
+DEBUG: LLM Result Object: 
+DEBUG: LLM Content: ''
+INFO:     127.0.0.1:61123 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'src/core/agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [30198]
+/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/pydantic/plugin/_loader.py:50: UserWarning: ImportError while loading the `logfire-plugin` Pydantic plugin, this plugin will not be installed.
+
+ImportError("cannot import name 'ReadableLogRecord' from 'opentelemetry.sdk._logs' (/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/opentelemetry/sdk/_logs/__init__.py)")
+  warnings.warn(
+INFO:     Started server process [30508]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

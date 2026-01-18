@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.venv
+env/
+venv/
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Project Data
+data/chroma_db/
+data/inputs/*
+!data/inputs/.gitkeep
+config/prompts.yaml.backup

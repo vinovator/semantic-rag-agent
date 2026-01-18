@@ -1,0 +1,28 @@
+/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/pydantic/plugin/_loader.py:50: UserWarning: ImportError while loading the `logfire-plugin` Pydantic plugin, this plugin will not be installed.
+
+ImportError("cannot import name 'ReadableLogRecord' from 'opentelemetry.sdk._logs' (/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/opentelemetry/sdk/_logs/__init__.py)")
+  warnings.warn(
+INFO:     Will watch for changes in these directories: ['/Users/vinothhaldorai/Documents/Vinoth/PROJECTS/semantic-rag-agent']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [32395] using WatchFiles
+/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/pydantic/plugin/_loader.py:50: UserWarning: ImportError while loading the `logfire-plugin` Pydantic plugin, this plugin will not be installed.
+
+ImportError("cannot import name 'ReadableLogRecord' from 'opentelemetry.sdk._logs' (/Users/vinothhaldorai/miniforge3/lib/python3.12/site-packages/opentelemetry/sdk/_logs/__init__.py)")
+  warnings.warn(
+INFO:     Started server process [32408]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+--- Booting RAG Agent ---
+DataAnalyst: Loaded aei_raw_claude_ai_2025-11-13_to_2025-11-20.csv (458778 rows)
+DEBUG: RAG Search Query -> 'Summarize the economic report'
+DEBUG: ChromaDB returned 25 raw results.
+Loading Cross-Encoder Model (this takes a moment)...
+DEBUG: Ranker kept 5 results.
+DEBUG: LLM Content: 'The Anthropic Economic Index Report, authored by Ruth Appel, Maxim Massenkoff, and Peter McCrory, along with Miles McCain, Ryan Heller, Tyler Neylon, and Alex Tamkin, introduces the concept of "economic primitives." These primitives are foundational characteristics that illustrate how AI, specifically Claude, is being used by both consumers and firms.
+
+This fourth edition of the report expands upon prior reports by adding new economic primitives beyond collaboration patterns (automation/augmentation). The strength of the index lies in showing not only the extent of AI usage but also the specific ways it is being utilized. These measures, while individual classifications may be imperfect, are directionally accurate and collectively provide significant insights into labor market shifts. The selection of these primitives was based on their expected economic relevance, complementarity of dimensions, and Claude's ability to classify conversations along those dimensions with directional accuracy.'
+DEBUG: LLM Metadata: {'prompt_feedback': None, 'usage': CompletionUsage(prompt_tokens=1245, prompt_tokens_details=None, completion_tokens=174, completion_tokens_details=None), 'index': 0, 'finish_reason': <FinishReason.STOP: 'STOP'>, 'safety_ratings': None, 'token_count': None}
+DEBUG: LLM Item: <class 'semantic_kernel.contents.text_content.TextContent'> -> The Anthropic Economic Index Report, authored by Ruth Appel, Maxim Massenkoff, and Peter McCrory, along with Miles McCain, Ryan Heller, Tyler Neylon, and Alex Tamkin, introduces the concept of "economic primitives." These primitives are foundational characteristics that illustrate how AI, specifically Claude, is being used by both consumers and firms.
+
+This fourth edition of the report expands upon prior reports by adding new economic primitives beyond collaboration patterns (automation/augmentation). The strength of the index lies in showing not only the extent of AI usage but also the specific ways it is being utilized. These measures, while individual classifications may be imperfect, are directionally accurate and collectively provide significant insights into labor market shifts. The selection of these primitives was based on their expected economic relevance, complementarity of dimensions, and Claude's ability to classify conversations along those dimensions with directional accuracy.
+INFO:     127.0.0.1:61267 - "POST /chat HTTP/1.1" 200 OK
