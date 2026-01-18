@@ -18,3 +18,7 @@ data/chroma_db/
 data/inputs/*
 !data/inputs/.gitkeep
 config/prompts.yaml.backup
+
+# Logs
+*.log
+api.log
