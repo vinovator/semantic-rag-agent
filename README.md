@@ -4,10 +4,10 @@ A production-ready **Hybrid AI Agent** that intelligently combines **Retrieval-A
 
 It doesn't just "search" or "calculate"—it **thinks, routes, and talks**.
 
-## 💡 Why This Tech Stack?
+## 💡 Tech Stack?
 
 ### 1. **Semantic Kernel (The Framework)**
-We chose **Microsoft Semantic Kernel** over generic chains (like LangChain) because:
+We chose **Microsoft Semantic Kernel** because:
 - **First-Class Function Calling**: It treats "Tools" as native plugins, allowing the LLM to autonomously orchestrate complex multi-step workflows.
 - **Enterprise Ready**: Designed for reliability, observability, and strict type safety.
 - **Connector Agnostic**: We can swap the backend Brain (e.g., from OpenAI to Gemini to Ollama) with zero code changes to the agent logic.
