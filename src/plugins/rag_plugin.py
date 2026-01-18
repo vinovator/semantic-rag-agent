@@ -20,10 +20,10 @@ class AdvancedRagPlugin:
         query_vectors = await self.embedding_gen.generate_embeddings([query])
         query_vector = query_vectors[0]
         
-        # 2. Search Collection (Get top 25 for re-ranking)
+        # 2. Search Collection (Get top K for re-ranking)
         results = await self.collection.search(
             vector=query_vector,
-            top=25 
+            top=self.config["rag"]["retrieve_top_k"] 
         )
 
         # Extract Records from Search Results

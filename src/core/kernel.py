@@ -8,7 +8,7 @@ from semantic_kernel import Kernel
 from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion, OpenAITextEmbedding
 from semantic_kernel.connectors.ai.google.google_ai import GoogleAIChatCompletion, GoogleAITextEmbedding
 
-# NEW Imports for v1.0 Vector Store
+
 from semantic_kernel.connectors.chroma import ChromaStore
 from src.core.models import KnowledgeRecord 
 from src.core.config import load_config
