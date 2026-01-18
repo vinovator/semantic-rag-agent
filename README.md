@@ -46,20 +46,20 @@ graph TD
         Files[".csv / .pdf (List)"] -.-> Agent
     end
 
-    Agent -->|Router (Auto)| Decision{Tool Selection}
+    Agent -->|"Router (Auto)"| Decision{Tool Selection}
     
     Decision -->|Qualitative| RAG[AdvancedRagPlugin]
     Decision -->|Quantitative| Data[DataAnalystPlugin]
     
     subgraph RAGPipeline ["RAG Pipeline"]
         RAG -->|Search| Chroma[ChromaDB]
-        Chroma -->|Raw Docs| Ranker[Cross-Encoder]
-        Ranker -->|Top 5 Context| Agent
+        Chroma -->|"Raw Docs"| Ranker[Cross-Encoder]
+        Ranker -->|"Top 5 Context"| Agent
     end
     
     subgraph DataPipeline ["Data Pipeline"]
         Data -->|Load| Pandas[Pandas DataFrame]
-        Data -->|Gen Code| Coder["Utility LLM (Phi-4/Ollama)"]
+        Data -->|"Gen Code"| Coder["Utility LLM (Phi-4/Ollama)"]
         Coder -->|Execute| Sandbox[Python Exec]
         Sandbox -->|Result| Agent
     end
