@@ -4,25 +4,35 @@ A production-ready **Hybrid AI Agent** that intelligently combines **Retrieval-A
 
 It doesn't just "search" or "calculate"—it **thinks, routes, and talks**.
 
+## 💡 Why This Tech Stack?
+
+### 1. **Semantic Kernel (The Framework)**
+We chose **Microsoft Semantic Kernel** over generic chains (like LangChain) because:
+- **First-Class Function Calling**: It treats "Tools" as native plugins, allowing the LLM to autonomously orchestrate complex multi-step workflows.
+- **Enterprise Ready**: Designed for reliability, observability, and strict type safety.
+- **Connector Agnostic**: We can swap the backend Brain (e.g., from OpenAI to Gemini to Ollama) with zero code changes to the agent logic.
+
+### 2. **ChromaDB (The Memory)**
+- **Why**: It matches our "Local-First" design philosophy. It runs embedded (no Docker required for dev), is extremely fast, and handles metadata filtering natively.
+
+### 3. **Cross-Encoders (The Quality Filter)**
+- **Problem**: Vector search is "fuzzy" and often retrieves irrelevant text.
+- **Solution**: We implemented a Re-ranking pipeline using `ms-marco-MiniLM-L-6-v2`. This "Second Brain" reads the top 25 results and ranks them by *true meaning*, ensuring the Agent only sees high-quality data.
+
 ## 🌟 Key Features
 
 ### 🧠 Autonomous Intelligence (The "Brain")
-The agent uses **LLM-based Automatic Function Calling** to autonomously allows the model to select tools to solve the problem:
-1.  **Semantic Search (RAG)**: For qualitative questions ("Summarize the mentorship program") -> Uses **ChromaDB** & **PDFs**.
-2.  **Conversational Data Analysis**: For quantitative questions ("What is the average price?") -> Uses **Pandas** & **CSVs** with a **Synthesis Loop**.
-3.  **Multi-Step Reasoning**: Can combine both tools to answer complex questions ("Check the PDF for the policy and the CSV for the impact") autonomously.
+The agent utilizes **LLM-based Automatic Function Calling** to intelligently select the right tool for the job:
+1.  **Semantic Search (RAG)**: For qualitative inquiries (e.g., "Summarize the mentorship program") -> Uses **ChromaDB** & **PDFs**.
+2.  **Conversational Data Analysis**: For quantitative inquiries (e.g., "What is the average price?") -> Uses **Pandas** & **CSVs** via a **Synthesis Loop**.
+3.  **Multi-Step Reasoning**: Capable of combining tools to answer complex compound questions ("Check the PDF for the policy and then query the CSV for the financial impact").
 
 ### 🚀 Advanced Capabilities
-- **Precision Re-ranking**: Integrates a `Cross-Encoder` (`ms-marco-MiniLM-L-6-v2`) to re-rank vector search results, boosting retrieval accuracy.
-- **Conversational Code Interpreter**: 
-    - **Actions**: Writes and executes Python code on the fly to query CSVs.
-    - **Observation**: Captures the raw result (e.g., `5400`).
-    - **Synthesis**: Transforms the raw number into a natural sentence ("The total revenue is $5,400.").
-- **Smart Ingestion**: 
-    - **PDFs**: Automatically indexed into the Vector Database.
-    - **CSVs**: Automatically loaded into the Pandas Engine.
-- **Context-Awareness**: The agent is "grounded" in your data. It knows exactly which files are available.
-- **Customizable Persona**: You can strictly define the Agent's identity (e.g., "You are a Legal Analyst", "You are an AI Economic Index Expert") in `config/prompts.yaml`, preventing generic answers.
+- **Precision Re-ranking**: Integrates a `Cross-Encoder` to re-rank vector search results, significantly boosting retrieval accuracy.
+- **Conversational Code Interpreter**:
+    - **Action**: Writes and executes Python code on the fly to query CSV datasets.
+    - **Observation**: Captures the raw execution result (e.g., `5400`).
+    - **Synthesis**: Transforms the raw number into a natural, context-aware sentence ("The total revenue constitutes $5,400.").
 
 ## 🧠 How to Ground the Agent (Configuration)
 The agent's "Brain" is defined in `config/prompts.yaml`. To make it an expert on **your** specific data:
