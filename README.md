@@ -41,7 +41,7 @@ graph TD
     User[User] -->|Query| API[API Server / Kernel]
     API -->|Orchestrate| Agent["Orchestrator Agent (Gemini)"]
     
-    subgraph "Brain / Grounding"
+    subgraph Brain ["Brain / Grounding"]
         Prompts["prompts.yaml"] -.-> Agent
         Files[".csv / .pdf (List)"] -.-> Agent
     end
@@ -51,13 +51,13 @@ graph TD
     Decision -->|Qualitative| RAG[AdvancedRagPlugin]
     Decision -->|Quantitative| Data[DataAnalystPlugin]
     
-    subgraph "RAG Pipeline"
+    subgraph RAGPipeline ["RAG Pipeline"]
         RAG -->|Search| Chroma[ChromaDB]
         Chroma -->|Raw Docs| Ranker[Cross-Encoder]
         Ranker -->|Top 5 Context| Agent
     end
     
-    subgraph "Data Pipeline"
+    subgraph DataPipeline ["Data Pipeline"]
         Data -->|Load| Pandas[Pandas DataFrame]
         Data -->|Gen Code| Coder["Utility LLM (Phi-4/Ollama)"]
         Coder -->|Execute| Sandbox[Python Exec]
